@@ -20,6 +20,12 @@ body {
     z-index: 100;
     background-color: white;
 }
+.companyTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:4px;
+}
 
 .companyTitle h2 {
     color: rgb(10, 20, 85);
@@ -193,9 +199,10 @@ body {
     border: none;
     border-radius: 2px;
     text-align: center;
-    background-color: rgb(121, 126, 130);
+    background-color: white;
     border-radius: 5px;
-    color: rgb(10, 20, 85);
+    color: rgb(121, 126, 130);
+    border: 1px solid rgb(121, 126, 130);
     position: absolute;
     bottom: 10px;
     width: 100%;
@@ -231,7 +238,7 @@ body {
     h3 {
         font-weight: 800;
         font-size: medium;
-        color: rgb(121,126, 130);
+        color: rgb(183, 183, 184);
     }
     .chainSection {
         height: 190px;
@@ -353,34 +360,31 @@ button{
 .firmDetails{
     color: rgb(78, 79, 80);
 }
-.search-box {
-  display: flex;
-  align-items: center;
-  width: 350px;
-  max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.productSection h3{
+    color: white;
 }
-
-
-.search-box button {
-  padding: 12px 20px;
-  background-color: #8f9092;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  height: 100%;
-  border-radius: 0px;
+.loc{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1px;
+    color: rgb(121, 126, 130);
 }
-
-.search-box input {
-  flex: 1;
-  padding: 12px 20px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+.loc-icon{
+    color: rgb(101, 103, 104);
 }
+.navright{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(121, 126, 130);
+    width: 500px;
 
+}
+.navr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:4px;
+}
