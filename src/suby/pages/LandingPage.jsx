@@ -4,6 +4,8 @@ import ItemsDisplay from '../components/ItemsDisplay'
 import Chains from '../components/Chains'
 import FirmCollections from '../components/FirmCollections'
 import ProductMenu from '../components/ProductMenu'
+import Offers from '../components/Offers'
+import Footer from '../components/Footer'
 
 const LandingPage = () => {
   return (
@@ -11,9 +13,11 @@ const LandingPage = () => {
         <TopBar />
         <div className="landingSection">
         <ItemsDisplay />
+        <Offers />
         <Chains />
         <FirmCollections />
         </div>
+        <Footer/>
     </div>
   )
 }

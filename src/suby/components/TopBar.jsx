@@ -10,6 +10,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const TopBar = () => {
   return (
    <section className="topBarSection">
+        <img src="/assets/nav-logo.png" alt="logo" className='lpng'/>
         <div className="companyTitle">
             <Link to='/' className='link'>
             <h2>Food Fantasy</h2>
@@ -17,7 +18,7 @@ const TopBar = () => {
         
         <div className="loc">
           <CiLocationOn className="loc-icon" />
-          <p>maisammaguda,dulapally,kompally</p>
+          <p>MREC,Maisammaguda,Hyderabad,Telangana</p>
           <MdOutlineKeyboardArrowDown className="loc-arrow"/>
         </div>
         </div>
