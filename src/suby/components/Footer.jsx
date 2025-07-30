@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className='footer'>
         <p className='f-p1'>
-            © 2025 <strong className="f-logo">Food Fantasy</strong> | Made with ❤️ by <a className='f-name' href="https://www.linkedin.com/in/kandyula-akhil-72737a2a5" >Kandyula Akhil</a> & <a className='f-name' href="#">#</a>
+            © 2025 <strong className="f-logo">Food Fantasy</strong> | Made with ❤️ by <a className='f-name' href="https://www.linkedin.com/in/kandyula-akhil-72737a2a5" >Kandyula Akhil</a> & <a className='f-name' href="https://www.linkedin.com/in/yerram-srilekha-787773372">Yerram Sri Lekha</a>
         </p>
         <p className='f-p2'>
             <p className="f-logo">Contact us</p>
