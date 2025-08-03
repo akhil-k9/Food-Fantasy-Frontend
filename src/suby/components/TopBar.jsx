@@ -10,7 +10,10 @@ import { FaShoppingCart } from "react-icons/fa";
 const TopBar = () => {
   return (
    <section className="topBarSection">
-        <img src="/assets/nav-logo.png" alt="logo" className='lpng'/>
+        <div className='lpng'>
+          <img src="/assets/logo3.jpg" alt="logo" />
+        </div>
+        
         <div className="companyTitle">
             <Link to='/' className='link'>
             <h2>Food Fantasy</h2>
@@ -26,11 +29,11 @@ const TopBar = () => {
         <div className="navright">
           <div className="navr">
             <BiSolidOffer />
-            <p>Offers</p>
+            <p><Link to='/offers'className='top-links'>Offers</Link></p>
           </div>
           <div className="navr">
             <MdOutlineHelp />
-            <p>Help</p>
+            <p><Link to='/help'className='top-links'>Help</Link></p>
           </div>
           <div className="navr">
             <BsFillPersonFill />
@@ -38,7 +41,7 @@ const TopBar = () => {
           </div>
           <div className="navr">
             <FaShoppingCart />
-            <p>Cart</p>
+            <p><Link to='/cart'className='top-links'>Cart</Link></p>
           </div>
         </div>
    </section>

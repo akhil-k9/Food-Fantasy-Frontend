@@ -3,6 +3,7 @@ import { API_URL } from "../api";
 import { useParams } from "react-router-dom";
 import TopBar from "./TopBar";
 
+let expItems = [];
 const ProductMenu = () => {
   const [products, setProducts] = useState([]);
 
@@ -22,6 +23,15 @@ const ProductMenu = () => {
   useEffect(() => {
     productHandler();
   }, []);
+    
+  const [items, setItems] = useState([]);
+
+  // Accept data in the function
+  const handleAdd = (item) => {
+    const upItems = [...items, item];
+    setItems(upItems);
+    expItems=upItems;
+  };
 
   return (
     <>
@@ -38,7 +48,7 @@ const ProductMenu = () => {
               </div>
               <div className="productGroup">
                 <img src={`${API_URL}/uploads/${item.image}`} />
-                <div className="addButton">ADD</div>
+                <div className="addButton"><button style={{ all: 'unset',cursor: 'pointer'}} onClick={() => handleAdd(item)}>Add</button></div>
               </div>
             </div>
           );
@@ -48,4 +58,5 @@ const ProductMenu = () => {
   );
 };
 
+export {expItems};
 export default ProductMenu;
