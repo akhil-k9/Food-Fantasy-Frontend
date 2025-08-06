@@ -8,7 +8,6 @@ function CartPage() {
     <div>
         <TopBar/>
         <Cart/>
-        <Footer/>
     </div>
   )
 }

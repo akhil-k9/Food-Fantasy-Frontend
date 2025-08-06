@@ -6,8 +6,11 @@ import './App.css'
 import ProductMenu from './suby/components/ProductMenu'
 import OffersPage from './suby/pages/OffersPage'
 import './index.css'
+import './Main.css'
 import HelpPage from './suby/pages/HelpPage'
 import CartPage from './suby/pages/CartPage'
+import SinginPage from './suby/pages/SinginPage'
+import PaymentPage from './suby/pages/PaymentPage'
 
 const App = () => {
   return (
@@ -18,6 +21,8 @@ const App = () => {
           <Route path="/offers" element={<OffersPage/>} />
           <Route path="/help" element={<HelpPage/>} />
           <Route path="/cart" element={<CartPage/>} />
+          <Route path="/signin" element={<SinginPage/>} />
+          <Route path="/payment" element={<PaymentPage/>} />
       </Routes>
     
     </div>

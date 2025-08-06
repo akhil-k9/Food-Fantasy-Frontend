@@ -1,0 +1,54 @@
+.payment-container {
+  width: 360px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fafafa;
+  height: 470px;
+}
+
+.payment-container h2 {
+  text-align: center;
+}
+
+.payment-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-form input,
+.payment-container input[type="text"],
+.payment-container input[type="password"] {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.place-order-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background-color: #0056b3;
+}
+
+.payment-success {
+  text-align: center;
+  padding: 50px;
+  color: green;
+}
+.pay-home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

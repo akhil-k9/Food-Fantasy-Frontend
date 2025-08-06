@@ -184,4 +184,26 @@
   height: 80vh;
   text-align: center;
   margin-top: 150px;
+  padding-bottom: 100px;
+}
+.cart-all{
+  position: relative;
+}
+.cart-n{
+  position: absolute;
+  top:-5px;
+  right: -16px;
+  font-size: x-small;
+  color: rgb(255, 255, 255);
+  border: none;
+  width: 12px;
+  height: 12px;
+  text-align: center;
+  background-color: #7287fd;
+  border-radius: 50%;
+  font-weight: bold;
+  padding: 2px 2px;
+}
+.cart-buttom{
+  height: 500px;
 }
