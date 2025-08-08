@@ -11,6 +11,7 @@ import HelpPage from './suby/pages/HelpPage'
 import CartPage from './suby/pages/CartPage'
 import SinginPage from './suby/pages/SinginPage'
 import PaymentPage from './suby/pages/PaymentPage'
+import AddressPage from './suby/pages/AddressPage'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/cart" element={<CartPage/>} />
           <Route path="/signin" element={<SinginPage/>} />
           <Route path="/payment" element={<PaymentPage/>} />
+          <Route path="/address" element={<AddressPage/>} />
       </Routes>
     
     </div>

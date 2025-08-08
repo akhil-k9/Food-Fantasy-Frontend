@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { API_URL } from '../api';
+import { API_URL } from '../api'; // Your backend API base URL
 
 const OtpAuthForm = () => {
   const [email, setEmail] = useState('');
@@ -8,6 +8,11 @@ const OtpAuthForm = () => {
   const [otp, setOtp] = useState('');
   const [status, setStatus] = useState('');
   const [isVerified, setIsVerified] = useState(false);
+  const [name, setName] = useState('');
+
+  // Loading states
+  const [loadingSend, setLoadingSend] = useState(false);
+  const [loadingVerify, setLoadingVerify] = useState(false);
 
   useEffect(() => {
     const storedEmail = localStorage.getItem('userEmail');
@@ -18,28 +23,81 @@ const OtpAuthForm = () => {
   }, []);
 
   const handleSendOtp = async () => {
+    setLoadingSend(true);
+    setStatus('');
     try {
       const res = await axios.post(`${API_URL}/user/send-otp`, { email });
       setOtpSent(true);
       setStatus(res.data.message);
     } catch (err) {
       setStatus(err.response?.data?.error || 'Failed to send OTP');
+    } finally {
+      setLoadingSend(false);
     }
   };
 
   const handleVerifyOtp = async () => {
+    setLoadingVerify(true);
+    setStatus('');
     try {
-      const res = await axios.post(`${API_URL}/user/verify-otp`, { email, otp });
+      let lat = null;
+      let lon = null;
+      let location = '';
+
+      if (navigator.geolocation) {
+        await new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(async (pos) => {
+            lat = pos.coords.latitude;
+            lon = pos.coords.longitude;
+
+            try {
+              const locRes = await axios.get(`https://us1.locationiq.com/v1/reverse.php`, {
+                params: {
+                  key: 'pk.bc1c871249fad49e24c080851f5c9556',
+                  lat,
+                  lon,
+                  format: 'json'
+                }
+              });
+
+              location =
+                locRes.data.address.city ||
+                locRes.data.address.town ||
+                locRes.data.address.state ||
+                '';
+            } catch (err) {
+              console.warn('Reverse geocoding failed', err);
+            }
+
+            resolve();
+          }, reject);
+        });
+      }
+      
+      const res = await axios.post(`${API_URL}/user/verify-otp`, {
+        email,
+        otp,
+        name: name || 'Guest',
+        location,
+        lat,
+        lon
+      });
+
       setStatus(res.data.message);
       localStorage.setItem('userEmail', email);
+      localStorage.setItem('location', location);
       setIsVerified(true);
     } catch (err) {
+      console.error(err);
       setStatus(err.response?.data?.error || 'Failed to verify OTP');
+    } finally {
+      setLoadingVerify(false);
     }
   };
 
   const handleLogout = () => {
     localStorage.removeItem('userEmail');
+    localStorage.clear();
     setEmail('');
     setOtp('');
     setOtpSent(false);
@@ -62,13 +120,26 @@ const OtpAuthForm = () => {
             {!otpSent ? (
               <>
                 <input
+                  type="text"
+                  placeholder="Enter your name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  style={styles.input}
+                />
+                <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   style={styles.input}
                 />
-                <button onClick={handleSendOtp} style={styles.button}>Send OTP</button>
+                <button 
+                  onClick={handleSendOtp} 
+                  style={styles.button}
+                  disabled={loadingSend}
+                >
+                  {loadingSend ? 'Sending...' : 'Send OTP'}
+                </button>
               </>
             ) : (
               <>
@@ -80,7 +151,13 @@ const OtpAuthForm = () => {
                   onChange={e => setOtp(e.target.value)}
                   style={styles.input}
                 />
-                <button onClick={handleVerifyOtp} style={styles.button}>Verify OTP</button>
+                <button 
+                  onClick={handleVerifyOtp} 
+                  style={styles.button}
+                  disabled={loadingVerify}
+                >
+                  {loadingVerify ? 'Verifying...' : 'Verify OTP'}
+                </button>
               </>
             )}
           </>
