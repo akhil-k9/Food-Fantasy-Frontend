@@ -1,80 +1,141 @@
-📦 Food Fantasy — Frontend
+# 📦 Food Fantasy — Frontend
 
-A delicious React + Vite frontend web application for Food Fantasy — a food-related UI built for browsing menus, viewing dishes, and interacting with a food ordering experience.
-This frontend is built with modern React tooling and deployed using Vercel.
+Food Fantasy is a modern and responsive food ordering frontend built using **React**.  
+The application allows users to browse menus, explore dishes, and interact with a smooth food ordering interface.
 
-Live Demo: https://foodfantasy-psi.vercel.app
+This project focuses on clean UI design, reusable components, and performance optimization using modern React development practices.  
+It is deployed using **Vercel** for fast and reliable hosting.
 
-🚀 Features
+🔗 **Live Demo:** https://foodfantasy-psi.vercel.app
 
-✅ Fast and lightweight React + Vite setup
-✅ Responsive layout for food menus
-✅ Components for dish listings, categories, and details
-✅ Designed for easy integration with Food Fantasy backend APIs
-✅ Easy deployment with Vercel
 
-🧰 Tech Stack
-Technology	Purpose
-React	User interface library
-Vite	Development build tool
-JavaScript	Logic & interactivity
-CSS	Styling
-Vercel	Deployment
+---
 
-📝 Screenshots
+## 🚀 Features
+
+- ⚡ Fast and lightweight React + Vite setup  
+- 📱 Fully responsive food menu layout  
+- 🧩 Reusable components for dishes and categories  
+- 🛒 Interactive UI for browsing and ordering  
+- 🔌 Easy integration with backend APIs  
+- 🌍 Simple and seamless deployment using Vercel  
+
+
+---
+
+## 🧰 Tech Stack
+
+| Technology  | Purpose                     |
+|-------------|----------------------------|
+| React       | User Interface Library     |
+| Vite        | Development Build Tool     |
+| JavaScript  | Application Logic          |
+| CSS         | Styling & Layout           |
+| Vercel      | Deployment & Hosting       |
+
+
+---
+
+## 📝 Screenshots
 
 <p align="center">
   <img src="Screenshot 2025-12-30 203408.png" width="700"/>
 </p>
-![alt text](<Screenshot 2026-02-24 120403.png>)
-![alt text](<Screenshot 2026-02-24 120301.png>)
 
-🚀 Getting Started
+<p align="center">
+  <img src="Screenshot 2026-02-24 120403.png" width="700"/>
+</p>
 
-Follow these steps to run the project locally:
+<p align="center">
+  <img src="Screenshot 2026-02-24 120301.png" width="700"/>
+</p>
 
-1. Clone the Repository
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally on your machine.
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/akhil-k9/Food-Fantasy-Frontend.git
 cd Food-Fantasy-Frontend
-2. Install Dependencies
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
-3. Run the App
+```
+
+### 3️⃣ Start the Development Server
+
+```bash
 npm run dev
+```
 
-Your app should now open in a local browser with hot reload enabled.
+Once started, the application will open in your browser with hot reload enabled.
 
-🧩 Folder Structure
+
+---
+
+## 🧩 Folder Structure
+
+```
 Food-Fantasy-Frontend/
+│
 ├── public/                # Static files
-├── src/                   # Source code
+├── src/                   # Main source code
 │   ├── assets/            # Images, icons, fonts
 │   ├── components/        # Reusable UI components
-│   ├── pages/             # Page views
-│   └── App.jsx
-├── .gitignore
+│   ├── pages/             # Application pages
+│   └── App.jsx            # Root component
+│
 ├── index.html
 ├── package.json
 ├── vite.config.js
 └── README.md
-📦 Deployment
+```
 
-This project is configured for Vercel. To deploy:
 
-Push your repo to GitHub.
+---
 
-Import into Vercel.
+## 📦 Deployment
 
-Set environment variables (if needed).
+This project is configured for deployment using **Vercel**.
 
-Deploy — automatic builds & previews enabled.
+To deploy:
 
-🛠️ Available Commands
-Command	Description
-npm run dev	Start local dev server
-npm run build	Build production files
-npm run preview	Preview production build
-❤️ Contributing
+1. Push your repository to GitHub  
+2. Import the project into Vercel  
+3. Configure environment variables (if required)  
+4. Deploy — automatic builds and previews will be enabled  
 
-Contributions are welcome!
-Please open issues or pull requests if you have ideas, fixes, or improvements.
 
+---
+
+## 🛠️ Available Scripts
+
+| Command          | Description                     |
+|------------------|--------------------------------|
+| npm run dev      | Start local development server |
+| npm run build    | Create production build        |
+| npm run preview  | Preview production build       |
+
+
+---
+
+## ❤️ Contributing
+
+Contributions, suggestions, and improvements are always welcome.  
+Feel free to open an issue or submit a pull request.
+
+
+---
+
+### ✨ Author
+
+Developed by **Akhil**  
+Passionate about building modern web applications and scalable full-stack projects.
